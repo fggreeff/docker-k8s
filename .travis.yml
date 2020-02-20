@@ -6,7 +6,8 @@ services:
 
 # Build image using Dockerfile.dev (Running Test)
 before_install:
-    - docker build -t fgreeff/docker-react-ui  -f ~/docker-k8s/react-ui/client/Dockerfile.dev .
+    - echo ${PWD}
+    - docker build -t fgreeff/docker-react-ui  -f /react-ui/client/Dockerfile.dev .
 
 # Tell travis how to run our tests
 script:
