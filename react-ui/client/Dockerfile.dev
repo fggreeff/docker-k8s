@@ -3,11 +3,12 @@ FROM node:alpine
 # RUN mkdir /app
 WORKDIR /app
 
-RUN pwd
-COPY package.json .
-RUN npm install 
+# RUN pwd
+# COPY ~/react-ui/client/package.json .
+
 
 COPY . . 
+RUN npm install 
 
 
 CMD ["npm", "run", "start"]
