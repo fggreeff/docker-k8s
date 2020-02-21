@@ -8,8 +8,8 @@ services:
 before_install:
     - echo $PWD
     - echo $(ls -ll)
-    - echo $ls
-    - docker build -t fgreeff/docker-react-ui  -f $(pwd):react-ui/client/Dockerfile.dev .
+    - echo $(ls -a)
+    - docker build -t fgreeff/docker-react-ui  -f react-ui/client/Dockerfile.dev .
     - echo $ls
 
 # Tell travis how to run our tests
