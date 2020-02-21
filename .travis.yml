@@ -1,6 +1,6 @@
 language: generic 
+sudo: required
 # Tell travis we need a copy of docker
-# sudo: required
 services: 
     - docker
 
