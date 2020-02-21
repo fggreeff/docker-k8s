@@ -1,13 +1,12 @@
-# language: generic 
+language: generic 
 # Tell travis we need a copy of docker
-sudo: required
+# sudo: required
 services: 
     - docker
 
 # Build image using Dockerfile.dev (Running Test)
 before_install:
-    - echo ${PWD}
-    - docker build -t fgreeff/docker-react-ui  -f /react-ui/client/Dockerfile.dev .
+    - docker build -t fgreeff/docker-react-ui  -f /home/travis/build/fggreeff/docker-k8s/react-ui/client/Dockerfile.dev .
 
 # Tell travis how to run our tests
 script:
