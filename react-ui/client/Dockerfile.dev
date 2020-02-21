@@ -3,7 +3,7 @@ FROM node:alpine
 # RUN mkdir /app
 WORKDIR /app
 
-RUN 'echo $(pwd)'
+RUN pwd
 COPY package.json .
 RUN npm install 
 
