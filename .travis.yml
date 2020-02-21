@@ -7,7 +7,7 @@ services:
 # Build image using Dockerfile.dev (Running Test)
 before_install:
     - echo $PWD
-    - echo ${ls ll}
+    - echo $(ls -ll)
     - echo $ls
     - docker build -t fgreeff/docker-react-ui  -f $(pwd):react-ui/client/Dockerfile.dev .
     - echo $ls
