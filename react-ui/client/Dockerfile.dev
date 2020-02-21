@@ -1,9 +1,10 @@
 FROM node:alpine
 
-RUN mkdir /app
+# RUN mkdir /app
 WORKDIR /app
 
-COPY /home/travis/build/fggreeff/docker-k8s/react-ui/client/package.json .
+RUN 'echo $(pwd)'
+COPY package.json .
 RUN npm install 
 
 COPY . . 
