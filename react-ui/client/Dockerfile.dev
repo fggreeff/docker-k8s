@@ -3,7 +3,7 @@ FROM node:alpine
 RUN mkdir /app
 WORKDIR /app
 
-COPY package.json .
+COPY /home/travis/build/fggreeff/docker-k8s/react-ui/client/package.json .
 RUN npm install 
 
 COPY . . 
