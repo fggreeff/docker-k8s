@@ -7,6 +7,8 @@ services:
       - POSTGRES_PASSWORD=postgres_password
   redis:
     image: "redis:latest"
+
+  # local server
   server:
     build:
       dockerfile: Dockerfile.dev
@@ -14,3 +16,11 @@ services:
     volumes:
       - /app/node_modules # This is a bookmark/hold on this folder. It won't be changed
       - ./server:/app # copy server folder to app folder in container
+    environment: # See server/keys.js for env vars
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - PGUSER=postgres
+      - PGHOST=postgres
+      - PGDATABASE=postgres
+      - PGPASSWORD=postgres_password
+      - PGPORT=5432
