@@ -26,6 +26,7 @@ services:
       - PGPORT=5432
 
   client:
+    stdin_open: true
     build:
       dockerfile: Dockerfile.dev
       context: ./client
@@ -40,3 +41,11 @@ services:
     volumes:
       - /app/node_modules
       - ./worker:/app
+
+  nginx:
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      - "3050:80"
