@@ -2,6 +2,10 @@
 
 React application for getting the fibonacci number for a given index. The application itself is not of value here. The aim is to have mutiple docker services running and ensuring we bring the building time of the 3 images to a minimum.
 
+## Arthitecture
+
+![arthitecture](./sources/arthitecture.png)
+
 ## Getting started
 
 #### Client
