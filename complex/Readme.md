@@ -10,7 +10,9 @@ React application for getting the fibonacci number for a given index. The applic
 
 Bring up Redis, Postgres and our Server with:
 > docker-compose up
+> [localhost:3050](http://localhost:3050/)
 
+Starting the containers separately:
 #### Client
 > cd client
 > docker build -f Dockerfile.dev .

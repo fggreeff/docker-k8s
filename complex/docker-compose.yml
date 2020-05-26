@@ -35,14 +35,22 @@ services:
       - ./client:/app
 
   worker:
+    depends_on:
+      - postgres
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
     volumes:
       - /app/node_modules
       - ./worker:/app
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
 
   nginx:
+    depends_on:
+      - api
+      - client
     restart: always
     build:
       dockerfile: Dockerfile.dev
