@@ -3,3 +3,12 @@ version: "3.3"
 services:
   postgres:
     image: "postgres:latest"
+  redis:
+    image: "redis:latest"
+  server:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_modules # This is a bookmark/hold on this folder. It won't be changed
+      - ./server:/app # copy server folder to app folder in container
